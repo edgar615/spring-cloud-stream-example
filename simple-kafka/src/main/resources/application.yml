@@ -1,6 +1,7 @@
 spring:
     kafka:
-        bootstrap-servers: 192.168.1.212:9092
+        bootstrap-servers: localhost:9092
         consumer:
             group-id: test
-            enable-auto-commit: true
+#            enable-auto-commit: true
+            max-poll-records: 5
