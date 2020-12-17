@@ -11,6 +11,8 @@
   <modules>
     <module>simple-kafka</module>
       <module>reply</module>
+      <module>stream-source</module>
+    <module>stream-sink</module>
   </modules>
 
   <parent>
@@ -27,7 +29,17 @@
 
     <junit.version>4.12</junit.version>
     <spring.cloud.version>Hoxton.SR8</spring.cloud.version>
-    <cloud.start.version>2.1.0.RELEASE</cloud.start.version>
   </properties>
 
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring.cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 </project>

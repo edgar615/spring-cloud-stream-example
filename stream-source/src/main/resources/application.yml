@@ -1,0 +1,15 @@
+spring:
+    cloud:
+        stream:
+            bindings:
+                default:
+                    content-type: application/json
+                UserChangedChannel:
+                    destination:  UserChangedTopic2
+                    group: userConsumerGroup
+                    producer:
+                        partitionKeyExpression: payload.user.id % 2
+                        partitionCount: 2
+            kafka:
+                binder:
+                    brokers: localhost:9092
