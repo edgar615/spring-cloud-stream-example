@@ -2,11 +2,9 @@ spring:
     cloud:
         stream:
             bindings:
-                default:
-                    content-type: application/json
                 UserChangedChannel:
+                    content-type: application/json
                     destination:  UserChangedTopic2
-                    group: userConsumerGroup
                     producer:
                         partitionKeyExpression: payload.user.id % 2
                         partitionCount: 2

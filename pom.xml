@@ -13,6 +13,7 @@
       <module>reply</module>
       <module>stream-source</module>
     <module>stream-sink</module>
+      <module>stream-sink2</module>
   </modules>
 
   <parent>

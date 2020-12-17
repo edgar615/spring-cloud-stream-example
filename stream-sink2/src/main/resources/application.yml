@@ -1,7 +1,7 @@
 spring:
     cloud:
         stream:
-            instanceIndex: 0
+            instanceIndex: 1
             instanceCount: 2
             bindings:
                 UserChangedChannel:
@@ -10,6 +10,8 @@ spring:
                     group: userConsumerGroup1
                     consumer:
                         partitioned: true
+                        instanceIndex: 1
+                        instanceCount: 2
             kafka:
                 binder:
                     brokers: localhost:9092

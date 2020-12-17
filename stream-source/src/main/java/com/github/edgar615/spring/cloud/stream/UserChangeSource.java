@@ -20,14 +20,16 @@ public class UserChangeSource {
 
 
     public void publish(String username) {
-        UserChangedEvent event = new UserChangedEvent();
-        event.setType("UserChangedEvent");
-        event.setOperation("add");
-        User user = new User();
-        user.setId(0);
-        user.setUsername("edgar");
-        event.setUser(user);
+        for (int i = 0; i < 10; i ++) {
+            UserChangedEvent event = new UserChangedEvent();
+            event.setType("UserChangedEvent");
+            event.setOperation("add");
+            User user = new User();
+            user.setId(i);
+            user.setUsername("edgar");
+            event.setUser(user);
 //        source.output().send(MessageBuilder.withPayload(event).build());
-        changedChannel.userChangedChannel().send(MessageBuilder.withPayload(event).build());
+            changedChannel.userChangedChannel().send(MessageBuilder.withPayload(event).build());
+        }
     }
 }
